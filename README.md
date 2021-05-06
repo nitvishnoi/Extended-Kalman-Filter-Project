@@ -124,6 +124,21 @@ and how to install it.
 Regardless of the IDE used, every submitted project must
 still be compilable with cmake and make.
 
+
+****Project outputs:****
+
+**Output1:**
+Here is the simulator video after running the EKL with dataset 1:
+
+[![DataSet1 video](data/dataset1.PNG)](https://www.youtube.com/watch?v=q9Fj_fgf2LA "Dataset1 video for  - Click to Watch!")
+
+
+**Output2:**
+Here is the simulator video after running the EKL with dataset 2:
+[![DataSet2 video](data/dataset2.PNG)](https://www.youtube.com/watch?v=28boLAbKBdQ "Dataset2 video for  - Click to Watch!")!
+
+
+
 ## How to write a README
 A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
 

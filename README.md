@@ -128,7 +128,14 @@ still be compilable with cmake and make.
 ****Project outputs:****
 
 **Output1:**
+
+Algorithm will be run against Dataset 1 in the simulator which is the same as "data/obj_pose-laser-radar-synthetic-input.txt" in the repository. We'll collect the positions that your algorithm outputs and compare them to ground truth data. Your px, py, vx, and vy RMSE should be less than or equal to the values [.11, .11, 0.52, 0.52].
+
 Here is the simulator video after running the EKL with dataset 1:
+
+When running your algorithm against "obj_pose-laser-radar-synthetic-input.txt", the RMSE obtained is as below, which is less than the required values [.11, .11, 0.52, .52].
+
+
 
 [![DataSet1 video](data/dataset1.PNG)](https://www.youtube.com/watch?v=woFdt70NKW4 "Dataset1 video for  - Click to Watch!")
 
@@ -137,6 +144,33 @@ Here is the simulator video after running the EKL with dataset 1:
 Here is the simulator video after running the EKL with dataset 2:
 [![DataSet2 video](data/dataset2.PNG)](https://www.youtube.com/watch?v=IjXjVjEqaso "Dataset2 video for  - Click to Watch!")!
 
+
+
+****Follows the Correct Algorithm****
+
+**A. While you may be creative with your implementation, there is a well-defined set of steps that must take place in order to successfully build a Kalman Filter. As such, your project should follow the algorithm as described in the preceding lesson.
+**
+
+In my implementation, all the steps involved in building a Kalman Filter is properly followed: state vector and covariance matrices initialization, predict and update step.
+
+**B.Your algorithm should use the first measurements to initialize the state vectors and covariance matrices.**
+
+Used the first measurements to initialize the state and covariance matrices
+
+**C. Upon receiving a measurement after the first, the algorithm should predict object position to the current timestep and then update the prediction using the new measurement.
+**
+
+With each new measurement data received, we are expected to leverage motion model to perform the prediction step, and then measurement model to perform the update step.
+
+**D. Your algorithm sets up the appropriate matrices given the type of measurement and calls the correct measurement function for a given sensor type.**
+
+During update step, laser and radar measurements are handled differently since they have different measurement models.
+In particular, radar measurement model is non-linear, ekf linearizes the model around the current estimates. 
+
+
+**Improvements can be done**
+
+If you happen to wonder how we could leverage a more complicated nonlinear process model to achieve better estimation results with EKF, please refer to the "Model Forecast Step" section in this paper(https://www.cse.sc.edu/~terejanu/files/tutorialEKF.pdf. The key idea is to expand the process nonlinear vector function in first order Taylor series and approximate this way the forecast.
 
 
 ## How to write a README

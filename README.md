@@ -142,14 +142,13 @@ When running your algorithm against "obj_pose-laser-radar-synthetic-input.txt", 
 
 **Output2:**
 Here is the simulator video after running the EKL with dataset 2:
-[![DataSet2 video](data/dataset2.PNG)](https://www.youtube.com/watch?v=IjXjVjEqaso "Dataset2 video for  - Click to Watch!")!
+[![DataSet2 video](data/dataset2.PNG)](https://www.youtube.com/watch?v=IjXjVjEqaso "Dataset2 video for  - Click to Watch!")
 
 
 
 ****Follows the Correct Algorithm****
 
-**A. While you may be creative with your implementation, there is a well-defined set of steps that must take place in order to successfully build a Kalman Filter. As such, your project should follow the algorithm as described in the preceding lesson.
-**
+**A.While you may be creative with your implementation, there is a well-defined set of steps that must take place in order to successfully build a Kalman Filter. As such, your project should follow the algorithm as described in the preceding lesson.**
 
 In my implementation, all the steps involved in building a Kalman Filter is properly followed: state vector and covariance matrices initialization, predict and update step.
 
@@ -157,12 +156,11 @@ In my implementation, all the steps involved in building a Kalman Filter is prop
 
 Used the first measurements to initialize the state and covariance matrices
 
-**C. Upon receiving a measurement after the first, the algorithm should predict object position to the current timestep and then update the prediction using the new measurement.
-**
+**C.Upon receiving a measurement after the first, the algorithm should predict object position to the current timestep and then update the prediction using the new measurement.**
 
 With each new measurement data received, we are expected to leverage motion model to perform the prediction step, and then measurement model to perform the update step.
 
-**D. Your algorithm sets up the appropriate matrices given the type of measurement and calls the correct measurement function for a given sensor type.**
+**D.Your algorithm sets up the appropriate matrices given the type of measurement and calls the correct measurement function for a given sensor type.**
 
 During update step, laser and radar measurements are handled differently since they have different measurement models.
 In particular, radar measurement model is non-linear, ekf linearizes the model around the current estimates. 
